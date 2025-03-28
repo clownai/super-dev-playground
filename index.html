@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Super Dev Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Super Dev Playground</h1>
+        <div class="tools-container">
+            <div class="tool-card">
+                <h2>JSON Formatter</h2>
+                <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+                <button onclick="formatJSON()">Format JSON</button>
+            </div>
+            <div class="tool-card">
+                <h2>Base64 Converter</h2>
+                <textarea id="base64Input" placeholder="Enter text to encode/decode..."></textarea>
+                <div class="button-group">
+                    <button onclick="encodeBase64()">Encode</button>
+                    <button onclick="decodeBase64()">Decode</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html> 

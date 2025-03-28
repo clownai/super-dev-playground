@@ -1,0 +1,26 @@
+<div class="tool-container">
+    <div class="tool-header">
+        <h2>Hash Generator</h2>
+        <div class="tool-actions">
+            <select class="select" id="algorithmSelect">
+                <option value="SHA-256" selected>SHA-256</option>
+                <option value="SHA-1">SHA-1</option>
+                <option value="SHA-384">SHA-384</option>
+                <option value="SHA-512">SHA-512</option>
+                <option value="MD5">MD5</option>
+            </select>
+            <button class="button" id="generateBtn">Generate Hash</button>
+            <button class="button secondary" id="clearBtn">Clear</button>
+        </div>
+    </div>
+    <div class="editors-container">
+        <div class="editor-section">
+            <div class="editor-label">Input</div>
+            <div class="editor-wrapper" id="inputEditor"></div>
+        </div>
+        <div class="editor-section">
+            <div class="editor-label">Hash Output</div>
+            <div class="editor-wrapper" id="outputEditor"></div>
+        </div>
+    </div>
+</div> 

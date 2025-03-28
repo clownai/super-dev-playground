@@ -1,0 +1,172 @@
+/* Tool container */
+.tool-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Editor wrapper */
+.editor-wrapper {
+    flex: 1;
+    min-height: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+/* CodeMirror customization */
+.cm-editor {
+    height: 100%;
+    font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    font-size: 14px;
+}
+
+.cm-editor.cm-focused {
+    outline: none;
+}
+
+/* Tool-specific layouts */
+
+/* Base64 Converter */
+.editors-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 100%;
+}
+
+.editor-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+/* Secondary button style */
+.button.secondary {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.button.secondary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    opacity: 1;
+}
+
+/* Web Editor */
+.web-editor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    height: 100%;
+}
+
+.web-editor .editors {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.web-editor .preview {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+}
+
+.web-editor iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* JS Playground */
+.js-playground {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 16px;
+    height: 100%;
+}
+
+.js-playground .console {
+    height: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-secondary);
+    padding: 8px;
+    font-family: monospace;
+    overflow-y: auto;
+}
+
+/* API Tester */
+.api-tester {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 16px;
+    height: 100%;
+}
+
+.api-tester .request-form {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Common form elements */
+.button {
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button:active {
+    opacity: 0.8;
+}
+
+.select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.input {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Tool headers */
+.tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tool-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tool-actions {
+    display: flex;
+    gap: 8px;
+} 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Super Dev Playground</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/titlebar.css">
+    <link rel="stylesheet" href="styles/editors.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+</head>
+<body>
+    <!-- Custom title bar -->
+    <div class="titlebar">
+        <div class="titlebar-title">Super Dev Playground</div>
+        <div class="titlebar-controls">
+            <button class="titlebar-button" id="minimizeButton">─</button>
+            <button class="titlebar-button" id="maximizeButton">□</button>
+            <button class="titlebar-button close" id="closeButton">×</button>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="app-container">
+        <!-- Sidebar navigation -->
+        <nav class="sidebar">
+            <div class="tool-categories">
+                <div class="category">
+                    <h3>Code Tools</h3>
+                    <button class="nav-button active" data-tool="web-editor">Web Editor</button>
+                    <button class="nav-button" data-tool="js-playground">JS Playground</button>
+                    <button class="nav-button" data-tool="json-formatter">JSON Formatter</button>
+                </div>
+                <div class="category">
+                    <h3>Data Tools</h3>
+                    <button class="nav-button" data-tool="base64">Base64 Converter</button>
+                    <button class="nav-button" data-tool="url-encoder">URL Encoder</button>
+                    <button class="nav-button" data-tool="hash-generator">Hash Generator</button>
+                </div>
+                <div class="category">
+                    <h3>Developer Tools</h3>
+                    <button class="nav-button" data-tool="api-tester">API Tester</button>
+                    <button class="nav-button" data-tool="terminal">Terminal</button>
+                    <button class="nav-button" data-tool="regex-tester">Regex Tester</button>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="content">
+            <!-- Tool containers will be dynamically loaded here -->
+            <div id="tool-container"></div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/notifications.js" type="module"></script>
+    <script src="scripts/theme.js" type="module"></script>
+    <script src="scripts/titlebar.js" type="module"></script>
+    <script src="scripts/navigation.js" type="module"></script>
+    <script src="scripts/tools/index.js" type="module"></script>
+</body>
+</html> 
