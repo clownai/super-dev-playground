@@ -5,6 +5,7 @@ const { initializeGitHubHandlers } = require('./github-handler');
 const { initializeN8nHandlers } = require('./n8n-handler');
 const { TerminalHandler } = require('./terminal-handler');
 const { ApiHandler } = require('./api-handler');
+const tokenManager = require('./token-manager');
 
 // Keep a global reference of the window object
 let mainWindow;
@@ -55,6 +56,9 @@ app.whenReady().then(async () => {
     
     apiHandler = new ApiHandler();
     apiHandler.initialize();
+    
+    // Store GitHub PAT
+    await tokenManager.setGitHubToken('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');
     
     createWindow();
 
