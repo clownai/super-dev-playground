@@ -1,5 +1,4 @@
 const { ipcMain, shell } = require('electron');
-const { Octokit } = require('@octokit/rest');
 const keytar = require('keytar');
 const crypto = require('crypto');
 const axios = require('axios');
@@ -16,6 +15,8 @@ let pendingState = null;
 let octokit = null;
 
 async function initializeGitHubHandlers(mainWindow) {
+    const { Octokit } = await import('octokit');
+    
     // Check if we have a stored token and initialize Octokit
     const token = await keytar.getPassword(SERVICE_NAME, 'github_accessToken');
     if (token) {

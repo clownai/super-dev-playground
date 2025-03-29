@@ -1,60 +1,58 @@
 {
-  "name": "super_dev_playground",
+  "name": "super-dev-playground",
   "version": "1.0.0",
-  "description": "A powerful desktop development environment",
+  "description": "A powerful development environment with integrated tools",
   "main": "src/main/index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "build": "electron-builder build --win --publish never",
-    "package": "electron-builder build --win --publish never"
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "rebuild-keytar": "electron-rebuild -f -w keytar"
   },
-  "author": "clownai",
-  "license": "ISC",
+  "author": "",
+  "license": "MIT",
   "dependencies": {
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/commands": "^6.0.0",
+    "@codemirror/lang-html": "^6.0.0",
+    "@codemirror/lang-javascript": "^6.0.0",
+    "@codemirror/lang-json": "^6.0.0",
     "axios": "^1.6.7",
-    "electron": "^28.2.0",
-    "node-pty": "^1.0.0",
-    "xterm": "^5.3.0",
-    "xterm-addon-fit": "^0.8.0",
-    "xterm-addon-web-links": "^0.9.0",
-    "xterm-addon-search": "^0.13.0",
-    "@codemirror/state": "^6.4.0",
-    "@codemirror/view": "^6.23.0",
-    "@codemirror/language": "^6.10.0",
-    "@codemirror/lang-javascript": "^6.2.1",
-    "@codemirror/lang-json": "^6.0.1",
-    "@codemirror/lang-html": "^6.4.7",
-    "@codemirror/lang-css": "^6.2.1",
-    "@codemirror/theme-one-dark": "^6.1.2",
+    "crypto": "^1.0.1",
+    "electron-store": "^8.2.0",
     "keytar": "^7.9.0",
-    "electron-store": "^8.1.0"
+    "octokit": "^4.1.2"
   },
   "devDependencies": {
-    "electron-builder": "^24.12.0",
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "node-gyp": "^10.0.1",
-    "windows-build-tools": "^5.2.2"
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "electron-rebuild": "^3.2.9"
   },
   "build": {
-    "appId": "com.clownai.superdevplayground",
+    "appId": "com.superdevplayground.app",
     "productName": "Super Dev Playground",
     "directories": {
       "output": "dist"
     },
     "win": {
-      "target": ["nsis"],
-      "icon": "build/icon.ico"
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   }
 }
